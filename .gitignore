@@ -1,0 +1,10 @@
+.streamlit/secrets.toml
+jobber_tokens.db
+*.db
+ordenes_*.csv
+ordenes_*.xlsx
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

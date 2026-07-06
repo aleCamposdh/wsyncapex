@@ -306,7 +306,7 @@ if st.session_state.pop("trigger_upload", False):
     from jobber.mutations import (
         LIST_CLIENTS_QUERY, CREATE_CLIENT_MUTATION,
         FIND_PROPERTY_QUERY, CREATE_PROPERTY_MUTATION,
-        CREATE_JOB_MUTATION, VISIT_START_MUTATION,
+        CREATE_JOB_MUTATION,
     )
     from jobber.mappers import map_row_to_job_input, build_property_input, addresses_match
     import time
@@ -380,16 +380,6 @@ if st.session_state.pop("trigger_upload", False):
                 raise Exception(errors[0]["message"])
 
             job_data = res["data"]["jobCreate"]["job"]
-
-            visit_nodes = job_data.get("visits", {}).get("nodes", [])
-            if visit_nodes:
-                try:
-                    vr = client.execute(VISIT_START_MUTATION, {"visitId": visit_nodes[0]["id"]})
-                    v_errors = vr["data"]["visitStart"]["userErrors"]
-                    if v_errors:
-                        _log.get(__name__).warning("visitStart userError: %s", v_errors[0]["message"])
-                except Exception as ve:
-                    _log.get(__name__).warning("visitStart falló (job creado OK): %s", ve)
 
             results.append({
                 "order":  title,

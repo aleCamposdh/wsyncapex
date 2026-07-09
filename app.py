@@ -466,7 +466,7 @@ if st.session_state.upload_report:
 st.markdown("---")
 footer_html = t("footer").replace(
     "Alejandro Campos",
-    "<a href='https://alejandrocampos.dev/' target='_blank' rel='noopener noreferrer' style='color:inherit; text-decoration:none;'>Alejandro Campos</a>",
+    "<a href='https://alejandrocampos.dev/' target='_blank' rel='noopener noreferrer' style='color:#2563eb; text-decoration:underline; text-underline-offset:2px;'>Alejandro Campos</a>",
 )
 st.markdown(
     f"<p style='text-align:center; color:gray;'>{footer_html}</p>",

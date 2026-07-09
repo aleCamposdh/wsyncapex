@@ -63,5 +63,5 @@ STRINGS = {
     "sidebar_lang": "Idioma / Language",
     "sidebar_jobber_status": "Jobber Status",
     # Footer
-    "footer": "WorkSyncApex · Developed by FroDev",
+    "footer": "WorkSyncApex · Developed by Alejandro Campos",
 }

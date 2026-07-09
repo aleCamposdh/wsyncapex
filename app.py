@@ -464,7 +464,11 @@ if st.session_state.upload_report:
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("---")
+footer_html = t("footer").replace(
+    "Alejandro Campos",
+    "<a href='https://alejandrocampos.dev/' target='_blank' rel='noopener noreferrer' style='color:inherit; text-decoration:none;'>Alejandro Campos</a>",
+)
 st.markdown(
-    f"<p style='text-align:center; color:gray;'>{t('footer')}</p>",
+    f"<p style='text-align:center; color:gray;'>{footer_html}</p>",
     unsafe_allow_html=True,
 )
